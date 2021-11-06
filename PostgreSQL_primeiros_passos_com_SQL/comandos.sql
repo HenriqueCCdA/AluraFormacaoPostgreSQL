@@ -56,6 +56,31 @@ DELETE
 	FROM aluno
 	WHERE nome = 'Nico';
 	
+INSERT INTO aluno (
+	nome, 
+	cpf,
+	observacao,
+	idade,
+	dinheiro,
+	altura,
+	ativo,
+	data_nascimento,
+	hora_aula,
+	matriculado_em
+) 
+VALUES (
+	'Diogo', 
+	'12345678901',
+	'Lorem ipsum dolor sit amet. Eum consequatur laboriosam qui voluptatem maxime sit neque laudantium in recusandae voluptas At delectus sunt id omnis delectus quo sunt exercitationem. Vel corporis provident et nihil aliquid et omnis cupiditate et nemo nobis! Qui recusandae corporis aut dolorem nobis et velit optio in dolor voluptatibus!',
+	35,
+	100.50,
+	1.81,
+	TRUE,
+	'1984-08-27',
+	'17:30:00',
+	'2020-02-08 12:32:45'
+);
+	
 SELECT * FROM aluno;
 
 SELECT nome AS "Nome do aluno", 
@@ -67,7 +92,6 @@ INSERT INTO aluno (nome) VALUES ('Vinicius Dias');
 INSERT INTO aluno (nome) VALUES ('Nico Steppat');
 INSERT INTO aluno (nome) VALUES ('João Roberto');
 INSERT INTO aluno (nome) VALUES ('Diego');
-INSERT INTO aluno (nome) VALUES ('Diogo');
 
 SELECT * FROM aluno
 WHERE nome LIKE 'Di_go'
@@ -90,5 +114,21 @@ WHERE nome LIKE '% %';
 SELECT * FROM aluno
 WHERE nome LIKE '%i%a%';
 	
-	
-	
+SELECT * FROM aluno
+WHERE cpf IS NULL;
+
+SELECT * FROM aluno WHERE cpf IS NOT NULL;	
+
+SELECT * FROM aluno WHERE idade = 35;
+
+SELECT * FROM aluno WHERE idade <> 36;
+
+SELECT * FROM aluno WHERE idade >= 35;
+
+SELECT * FROM aluno WHERE idade <= 35;
+
+SELECT * FROM aluno WHERE idade BETWEEN 10 and 35;
+
+SELECT * FROM aluno WHERE ativo = false;
+
+SELECT * FROM aluno WHERE ativo IS NULL;
