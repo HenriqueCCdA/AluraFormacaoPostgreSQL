@@ -1,12 +1,12 @@
-INSERT INTO aluno (primeiro_nome, ultimo_nome, data_nascimento) VALUES
+INSERT INTO academico.aluno (primeiro_nome, ultimo_nome, data_nascimento) VALUES
 	('Vinicius', 'Dias', '1997-10-15'),
 	('Patricia', 'Freitas', '1986-10-25'),
 	('Diogo', 'Oliveira', '1984-08-27'),
 	('Maria', 'Rosa', '1985-01-01');
 
-INSERT INTO categoria (nome) VALUES ('Front-end'), ('Programação'), ('Bancos de dados'), ('Data Science');
+INSERT INTO academico.categoria (nome) VALUES ('Front-end'), ('Programação'), ('Bancos de dados'), ('Data Science');
 
-INSERT INTO curso (nome, categoria_id) VALUES
+INSERT INTO academico.curso (nome, categoria_id) VALUES
 	('HTML', 1),
 	('CSS', 1),
 	('JS', 1),
@@ -22,7 +22,9 @@ INSERT INTO curso (nome, categoria_id) VALUES
 	('Machine Learning', 4),
 	('Power BI', 4);
 	
-INSERT INTO aluno_curso VALUES (1, 4), (1, 11), (2, 1), (2, 2), (3, 4), (3, 3), (4, 4), (4, 6), (4, 5);
+INSERT INTO academico.aluno_curso VALUES (1, 4), (1, 11), (2, 1), (2, 2), (3, 4), (3, 3), (4, 4), (4, 6), (4, 5);
 
--- Trocando o nome de Data Science para Ciência de Dados.
-UPDATE categoria SET nome = 'Ciência de Dados' WHERE id = 4 ; 
+SELECT *
+	FROM academico.curso
+	JOIN academico.categoria ON academico.categoria.id = academico.curso.categoria_id
+   WHERE categoria_id =2;
